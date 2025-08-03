@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect, Suspense, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Album } from './types';
-import { ALBUMS } from './constants';
-import Scene from './components/Scene';
-import CDSelector from './components/CDSelector';
-import Controls from './components/Controls';
-import { PlaceholderIcon } from './components/Icons';
+import { Album } from './src/types';
+import { ALBUMS } from './src/constants';
+import Scene from './src/components/Scene';
+import CDSelector from './src/components/CDSelector';
+import Controls from './src/components/Controls';
+import { PlaceholderIcon } from './src/components/Icons';
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
 

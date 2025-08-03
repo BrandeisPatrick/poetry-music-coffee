@@ -1,63 +1,68 @@
 # 3D CD Player with Spotify Integration
 
-A 3D interactive CD player that integrates with Spotify for music playback.
+A beautiful 3D interactive CD player that integrates with Spotify for music playback.
 
-## Prerequisites
+## 🎵 Features
 
-- Node.js
-- Spotify Premium account (required for playback)
-- Spotify App credentials
+- **3D Interactive Interface**: Realistic CD player with spinning discs
+- **Spotify Integration**: Full OAuth authentication and playback control
+- **Premium Audio**: Requires Spotify Premium for playback
+- **Modern UI**: Clean, responsive design with smooth animations
+- **Album Library**: Pre-loaded collection of classic albums
 
-## Setup
+## 🚀 Quick Start
 
-### 1. Spotify App Setup
+See detailed setup instructions in [`docs/README.md`](./docs/README.md)
 
-1. Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
-2. Create a new app
-3. Add `http://localhost:3000/callback` to Redirect URIs
-4. Note your Client ID and Client Secret
+## 📁 Project Structure
 
-### 2. Backend Configuration
-
-1. Copy `.env.example` to `.env`:
-   ```bash
-   cp .env.example .env
-   ```
-2. Edit `.env` and add your Spotify credentials:
-   ```
-   SPOTIFY_CLIENT_ID=your_client_id_here
-   SPOTIFY_CLIENT_SECRET=your_client_secret_here
-   ```
-
-### 3. Frontend Configuration
-
-Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-
-### 4. Install Dependencies
-
-```bash
-npm install
+```
+3d-cd-player/
+├── src/                    # Source code
+│   ├── components/         # React components
+│   ├── types/             # TypeScript definitions
+│   ├── constants.ts       # Album data and constants
+│   └── types.ts          # Type definitions
+├── deployment/            # Deployment configurations
+│   ├── frontend/         # Vercel deployment files
+│   └── backend/          # Render deployment files
+├── docs/                 # Documentation
+├── server.js            # Express backend server
+├── App.tsx              # Main React component
+├── index.html          # HTML entry point
+└── package.json        # Current environment config
 ```
 
-## Run Locally
+## 🌐 Live Demo
 
-1. Start the backend server (required for Spotify authentication):
-   ```bash
-   node server.js
-   ```
-   The backend runs on http://localhost:3000
+- **Frontend**: [Deployed on Vercel](https://3d-cd-player-a800q0z23-patricks-projects-1e98187f.vercel.app)
+- **Repository**: [GitHub](https://github.com/BrandeisPatrick/poetry-music-coffee)
 
-2. In a new terminal, start the frontend:
-   ```bash
-   npm run dev
-   ```
-   The frontend runs on http://localhost:8080
+## 📚 Documentation
 
-3. Open http://localhost:8080 in your browser
+- [**Setup Guide**](./docs/README.md) - Complete installation instructions
+- [**Deployment Guide**](./docs/DEPLOY.md) - General deployment information  
+- [**Render Deployment**](./docs/RENDER_DEPLOY.md) - Backend deployment to Render
+- [**Backend Deployment**](./docs/BACKEND_DEPLOY.md) - Alternative backend deployment options
 
-## Usage
+## 🛠 Technologies
 
-1. Click "Login with Spotify" to authenticate
-2. Select a CD from the collection
-3. Use the play/pause controls to manage playback
-4. The 3D CD will rotate while playing
+- **Frontend**: React, TypeScript, Vite, Three.js, Tailwind CSS
+- **Backend**: Node.js, Express, Spotify Web API
+- **3D Graphics**: @react-three/fiber, @react-three/drei
+- **Deployment**: Vercel (frontend), Render (backend)
+
+## 🎮 Usage
+
+1. **Login** with your Spotify Premium account
+2. **Select** an album from the library
+3. **Open** the CD tray and insert a disc
+4. **Play** music and watch the 3D CD spin!
+
+## 📄 License
+
+ISC License - see individual package.json files for details.
+
+---
+
+Built with ❤️ and lots of ☕
