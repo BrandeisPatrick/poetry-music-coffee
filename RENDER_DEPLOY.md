@@ -1,40 +1,43 @@
 # Deploy Backend to Render (FREE)
 
+## 🚨 IMPORTANT: Fix Applied
+This deployment includes fixes for the ES module errors you encountered.
+
 ## Step-by-Step Deployment
 
-### 1. Create GitHub Repository
-First, push your code to GitHub:
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin YOUR_GITHUB_REPO_URL
-git push -u origin main
-```
+### 1. GitHub Repository Ready
+Your code is already in: https://github.com/BrandeisPatrick/poetry-music-coffee
 
 ### 2. Deploy to Render
 
 1. Go to [render.com](https://render.com) and sign up/login
 2. Click **"New +"** → **"Web Service"**
 3. Connect your GitHub account if not already connected
-4. Select your repository
+4. Select your repository: `BrandeisPatrick/poetry-music-coffee`
 5. Configure the service:
-   - **Name**: `spotify-cd-player-backend` (or any name you prefer)
+   - **Name**: `spotify-cd-player-backend`
    - **Region**: Choose the closest to you
-   - **Branch**: `main`
+   - **Branch**: `master` (not main)
+   - **Root Directory**: Leave empty (uses root)
    - **Runtime**: `Node`
    - **Build Command**: `npm install`
    - **Start Command**: `node server.js`
    - **Instance Type**: Select **"Free"**
 
-6. Add Environment Variables:
-   Click "Advanced" and add these environment variables:
-   - `SPOTIFY_CLIENT_ID` = `d076bd005b224087a1feca57ae94a9ac`
-   - `SPOTIFY_CLIENT_SECRET` = `6510370a9ee74e02897efb89599a0e3f`
-   - `FRONTEND_URI` = `https://3d-cd-player-m015ys8kf-patricks-projects-1e98187f.vercel.app`
-   - `REDIRECT_URI` = (leave empty for now, we'll update after deployment)
+### 3. ⚠️ CRITICAL: Add Environment Variables
 
-7. Click **"Create Web Service"**
+**BEFORE** clicking "Create Web Service", scroll down to **Environment Variables** and add:
+
+| Key | Value |
+|-----|-------|
+| `SPOTIFY_CLIENT_ID` | `d076bd005b224087a1feca57ae94a9ac` |
+| `SPOTIFY_CLIENT_SECRET` | `6510370a9ee74e02897efb89599a0e3f` |
+| `FRONTEND_URI` | `https://3d-cd-player-eppi5tk91-patricks-projects-1e98187f.vercel.app` |
+| `NODE_ENV` | `production` |
+
+**⚠️ DO NOT** set `REDIRECT_URI` yet - we'll add it after getting the Render URL.
+
+4. Click **"Create Web Service"**
 
 ### 3. After Deployment
 
