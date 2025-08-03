@@ -1,4 +1,7 @@
 {
+  "buildCommand": "cp package.frontend.json package.json && npm install && npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "cp package.frontend.json package.json && npm install",
   "rewrites": [
     {
       "source": "/(.*)",

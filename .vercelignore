@@ -1,0 +1,7 @@
+# Ignore backend files for Vercel deployment
+server.js
+backend-package.json
+render.yaml
+Procfile
+RENDER_DEPLOY.md
+BACKEND_DEPLOY.md
