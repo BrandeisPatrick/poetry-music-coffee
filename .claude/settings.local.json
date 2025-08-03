@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(npm ls:*)",
+      "Bash(find:*)",
+      "Bash(npm install:*)",
+      "Bash(cp:*)",
+      "Bash(vercel:*)",
+      "Bash(npm run build:*)",
+      "Bash(railway --version)",
+      "Bash(railway login:*)",
+      "Bash(gh auth:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": []
+  }
+}

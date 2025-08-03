@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: spotify-cd-player-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SPOTIFY_CLIENT_ID
+        sync: false
+      - key: SPOTIFY_CLIENT_SECRET
+        sync: false
+      - key: FRONTEND_URI
+        sync: false
+      - key: REDIRECT_URI
+        sync: false

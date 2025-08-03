@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.production.local
+*.env
+
+# Build output
+dist/
+.vercel/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Deployment
+.vercel
+railway.json
+
+# Backup files
+*.backup

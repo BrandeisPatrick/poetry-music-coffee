@@ -1,0 +1,5 @@
+{
+  "name": "3D CD Player",
+  "description": "An interactive 3D CD player application built with React and Three.js, allowing users to select albums and play music in a visually appealing interface.",
+  "requestFramePermissions": []
+}
