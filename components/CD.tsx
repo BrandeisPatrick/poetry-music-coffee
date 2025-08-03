@@ -11,7 +11,11 @@ interface CDProps {
 
 const CD: React.FC<CDProps> = ({ album, isPlaying }) => {
     const cdSpinRef = useRef<THREE.Group>(null!);
-    const texture = useTexture(album.coverUrl);
+    
+    // Add error handling for texture loading
+    const texture = useTexture(album.coverUrl, undefined, undefined, (error) => {
+        console.warn('Failed to load album cover:', album.coverUrl, error);
+    });
 
     const innerRadius = 0.22;
     const outerRadius = 1.2;
