@@ -4,36 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3D CD Player</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              orbitron: ['"Orbitron"', 'sans-serif'],
-            },
-          }
-        }
-      }
-    </script>
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.1.1/",
-    "react": "https://esm.sh/react@^19.1.1",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
-    "@react-three/drei": "https://esm.sh/@react-three/drei@^10.6.1",
-    "three": "https://esm.sh/three@^0.179.1",
-    "@react-three/fiber": "https://esm.sh/@react-three/fiber@^9.3.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+    <script>
+      window.onSpotifyWebPlaybackSDKReady = () => {
+        window.spotifySDKReady = true;
+        window.dispatchEvent(new Event('spotify-sdk-ready'));
+      };
+    </script>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>

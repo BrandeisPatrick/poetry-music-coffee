@@ -76,12 +76,21 @@ export default function App() {
 
   // Effect to handle SDK readiness, runs only once.
   useEffect(() => {
-    window.onSpotifyWebPlaybackSDKReady = () => {
+    const handleSDKReady = () => {
       setIsSdkReady(true);
     };
-    if(window.Spotify) {
-        setIsSdkReady(true);
+
+    if (window.Spotify) {
+      setIsSdkReady(true);
+    } else if (window.spotifySDKReady) {
+      setIsSdkReady(true);
+    } else {
+      window.addEventListener('spotify-sdk-ready', handleSDKReady);
     }
+
+    return () => {
+      window.removeEventListener('spotify-sdk-ready', handleSDKReady);
+    };
   }, []);
 
   // Effect to initialize the player when SDK is ready and a token is available
